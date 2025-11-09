@@ -10,11 +10,18 @@
       background: linear-gradient(135deg, #1e1e2f, #12121a);
       color: #fff;
       margin: 0;
-      padding: 0 20px;
+      padding: 0;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
     h1, h2 {
-      text-align: center;
       color: #00ffff;
       text-shadow: 0 0 10px #00ffff;
     }
@@ -31,6 +38,8 @@
     ul {
       list-style-type: "✨ ";
       line-height: 1.8em;
+      display: inline-block;
+      text-align: left;
     }
 
     .message-box {
@@ -45,7 +54,6 @@
       padding: 15px;
       margin: 20px auto;
       max-width: 600px;
-      text-align: center;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     }
 
@@ -85,62 +93,93 @@
       margin: 40px 0;
       color: #aaa;
     }
+
+    /* Fade animation */
+    .fade {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
-  <h1>ChatGPT AI Discord Bot</h1>
-  <p>Hi! I’ve recreated ChatGPT AI chatbot using the <a href="https://github.com/xtekky/gpt4free" target="_blank">g4f</a> Python library. He uses GPT-3.5 and acts like the real ChatGPT.</p>
+  <div class="container">
+    <h1 class="fade">ChatGPT AI Discord Bot</h1>
+    <p class="fade">Hi! I’ve recreated ChatGPT AI chatbot using the <a href="https://github.com/xtekky/gpt4free" target="_blank">g4f</a> Python library. He uses GPT-3.5 and acts like the real ChatGPT.</p>
 
-  <h2>What can ChatGPT do?</h2>
-  <ul>
-    <li>Start threads for hangouts 🧵</li>
-    <li>Recommend playlists 🎵</li>
-    <li>GIF searcher</li>
-    <li>Use emojis 😄</li>
-    <li>Write code</li>
-    <li>Read your bio</li>
-    <li>Understand images 🖼️</li>
-  </ul>
+    <h2 class="fade">What can ChatGPT do?</h2>
+    <ul class="fade">
+      <li>Start threads for hangouts 🧵</li>
+      <li>Recommend playlists 🎵</li>
+      <li>GIF searcher</li>
+      <li>Use emojis 😄</li>
+      <li>Write code</li>
+      <li>Read your bio</li>
+      <li>Understand images 🖼️</li>
+    </ul>
 
-  <div class="message-box">
-    ChatGPT is always learning new things and getting better every day!  
-    Ask him anything, chat with your friends, or just have fun in your server 🎉
+    <div class="message-box fade">
+      ChatGPT is always learning new things and getting better every day!  
+      Ask him anything, chat with your friends, or just have fun in your server 🎉
+    </div>
+
+    <button class="add-button fade" onclick="window.open('https://discord.com/oauth2/authorize?client_id=1433900755831492630', '_blank')">
+      ➕ Add ChatGPT to Discord
+    </button>
+
+    <h2 class="fade">Limitations</h2>
+    <p class="fade">ChatGPT can’t see avatars or access private messages, and his responses are limited to 2000 characters per message — but he’ll automatically split longer ones for you!</p>
+
+    <h2 class="fade">Fun facts</h2>
+    <p class="fade">Did you know ChatGPT’s avatar is inspired by the Discord logo? He’s not just a bot — he’s part of your Discord experience.</p>
+
+    <img src="animated_clyde.gif" alt="ChatGPT Avatar" class="chatgptpfp fade">
+
+    <h2 class="fade">FAQ</h2>
+    <p class="fade"><b>Q:</b> What API does ChatGPT use?<br>
+    <b>A:</b> ChatGPT uses a custom GPT-3.5 model from g4f library.</p>
+
+    <p class="fade"><b>Q:</b> How do I add ChatGPT to my server?<br>
+    <b>A:</b> Click the “Add ChatGPT to Discord” button above!</p>
+
+    <p class="fade"><b>Q:</b> Does ChatGPT have rate limits?<br>
+    <b>A:</b> Yes, heavy requests are queued for stability.</p>
+
+    <p class="fade"><b>Q:</b> Can I DM ChatGPT?<br>
+    <b>A:</b> Of course! Just message him directly and he’ll reply instantly.</p>
+
+    <p class="fade"><b>Q:</b> Why does ChatGPT sometimes create threads?<br>
+    <b>A:</b> He creates them so your conversations stay organized!</p>
+
+    <h2 class="fade">Official Website</h2>
+    <p class="fade">If you ask ChatGPT to link his website, he’ll send you here!  
+    Made by <b>benjithepro</b> ❤️</p>
+
+    <p class="fade">By using ChatGPT, you agree to our <a href="terms.html">Terms of Service</a>.</p>
+
+    <footer class="fade">© 2025 ChatGPT AI — Not affiliated with OpenAI or Discord.</footer>
   </div>
 
-  <button class="add-button" onclick="window.open('https://discord.com/oauth2/authorize?client_id=1433900755831492630', '_blank')">
-    ➕ Add ChatGPT to Discord
-  </button>
+  <script>
+    // Fade-in / fade-out on scroll
+    const faders = document.querySelectorAll('.fade');
 
-  <h2>Limitations</h2>
-  <p>ChatGPT can’t see avatars or access private messages, and his responses are limited to 2000 characters per message — but he’ll automatically split longer ones for you!</p>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.2 });
 
-  <h2>Fun facts</h2>
-  <p>Did you know ChatGPT’s avatar is inspired by the Discord logo? He’s not just a bot — he’s part of your Discord experience.</p>
-
-  <img src="animated_clyde.gif" alt="ChatGPT Avatar" class="chatgptpfp">
-
-  <h2>FAQ</h2>
-  <p><b>Q:</b> What API does ChatGPT use?<br>
-  <b>A:</b> ChatGPT uses a custom GPT-3.5 model from g4f library.</p>
-
-  <p><b>Q:</b> How do I add ChatGPT to my server?<br>
-  <b>A:</b> Click the “Add ChatGPT to Discord” button above!</p>
-
-  <p><b>Q:</b> Does ChatGPT have rate limits?<br>
-  <b>A:</b> Yes, heavy requests are queued for stability.</p>
-
-  <p><b>Q:</b> Can I DM ChatGPT?<br>
-  <b>A:</b> Of course! Just message him directly and he’ll reply instantly.</p>
-
-  <p><b>Q:</b> Why does ChatGPT sometimes create threads?<br>
-  <b>A:</b> He creates them so your conversations stay organized!</p>
-
-  <h2>Official Website</h2>
-  <p>If you ask ChatGPT to link his website, he’ll send you here!  
-  Made by <b>benjithepro</b> ❤️</p>
-
-  <p>By using ChatGPT, you agree to our <a href="terms.html">Terms of Service</a>.</p>
-
-  <footer>© 2025 ChatGPT AI — Not affiliated with OpenAI or Discord.</footer>
+    faders.forEach(fade => observer.observe(fade));
+  </script>
 </body>
 </html>
