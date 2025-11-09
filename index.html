@@ -1,47 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>clyde ai</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT AI</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #12121a);
+      color: #fff;
+      margin: 0;
+      padding: 0 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      list-style-type: "✨ ";
+      line-height: 1.8em;
+    }
+
+    .message-box {
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      font-size: 1.1em;
+      border: 2px solid;
+      border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .add-button {
+      display: block;
+      width: fit-content;
+      margin: 30px auto;
+      padding: 12px 25px;
+      font-size: 1.2em;
+      font-weight: bold;
+      background: linear-gradient(90deg, #5865F2, #4752C4);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #5865F2;
+    }
+
+    .add-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #5865F2;
+    }
+
+    .chatgptpfp {
+      display: block;
+      margin: 20px auto;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      border: 3px solid #00ffff;
+      box-shadow: 0 0 15px #00ffff;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-    <h1>I recreated clyde ai chatbot in discord</h1>
-    <p>Hi, I have recreated clyde ai chatbot using <a href="https://github.com/xtekky/gpt4free">g4f</a> python library. He's using gpt 3.5 and he's acting like the real clyde.</p>
-    <h2>What can clyde do?</h2>
-    <ul>
-        <li>start threads for hangouts 🧵</li>
-        <li>recommend playlists 🎵</li>
-        <li>gif searcher</li>
-        <li>use emojis 😄</li>
-        <li>writing codes</li>
-        <li>read your bio</li>
-        <li>read images</li>
-    </ul>
-    <p>Clyde is always learning new things and getting better every day. he can answer your questions, have in-depth conversations with you and your friends, and even find the right gif for the moment. just type @Clyde into a server and you can chat with him in any channel.</p>
-    <h2>Limitations</h2>
-    <p>As much as he would like to, he can't see pictures or avatars, and he can only access a limited number of text chats in this channel. but who knows what the future holds? maybe those things will be possible someday.</p>
-    <p>Clyde can't send messages longer than 2000 characters because it's a user account and he doesn't have nitro, instead, he will split his messages.</p>
-    <h2>Fun facts</h2>
-    <p>Did you know that his face is inspired by the discord logo? and he's not just a bot - he's part of the discord experience. so come on in, let's have some fun!</p>
-    <img src="animated_clyde.gif" alt="The image is not animated because he need nitro" class="clydepfp">
-    <h2>FAQ</h2>
-    <p>Q: What API does Clyde use?</p>
-    <p>A: Clyde uses a crack of open ai with gpt 3.5. Cool, right?</p>
-    <p>Q: How do I add clyde to my server (or group chat)?</p>
-    <p>A: Clyde is a user account and not a bot, so it will be complicated to add him to your server or group chat, but he does accept friend requests, so you can have Clyde on your server 😁 because his creator has to go to the account and add Clyde to your server. but you will have to wait.</p>
-    <p>Q: Does Clyde have rate limits?</p>
-    <p>A: Clyde can have rate limits, his requests will be into a queue..</p>
-    <p>Q: Why is Clyde's name "c1yde"?</p>
-    <p>A: It's not my fault, it's Discord's fault. Discord is preventing me from renaming clyde to "clydebotai" because of an error I get "username cannot contain clyde" so that's why his name is c1yde but his display name is clyde.</p>
-    <p>Q: Will I be able to dm Clyde?</p>
-    <p>A: Absolutely, you can dm clyde, but you don't mention clyde in dms. He will respond immediately. Add clyde: c1ydebotai.</p>
-    <p>Q: Does this Clyde insult?</p>
-    <p>A: Clyde can insults if you are rude to him. Be respectful and he will not insults you.</p>
-    <p>Q: Why is clyde creating threads?</p>
-    <p>A: Clyde can create threads so you can talk to him without pinging him, if you don't want that clyde create threads, disable "Create public threads" permissions.</p>
-    <h2>Official Website</h2>
-    <p>If you ask Clyde to link to his official website, he will link to this website. Remember, clyde was made by benjithepro. And he will also link his discord server if you ask him. Have fun! </p>
-    <p>By using clyde, you agree to our <a href="terms.html">Terms of Services</a></p>
-    <iframe src="https://discord.com/widget?id=1327587538067525662&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+  <h1>ChatGPT AI Discord Bot</h1>
+  <p>Hi! I’ve recreated ChatGPT AI chatbot using the <a href="https://github.com/xtekky/gpt4free" target="_blank">g4f</a> Python library. He uses GPT-3.5 and acts like the real ChatGPT.</p>
+
+  <h2>What can ChatGPT do?</h2>
+  <ul>
+    <li>Start threads for hangouts 🧵</li>
+    <li>Recommend playlists 🎵</li>
+    <li>GIF searcher</li>
+    <li>Use emojis 😄</li>
+    <li>Write code</li>
+    <li>Read your bio</li>
+    <li>Understand images 🖼️</li>
+  </ul>
+
+  <div class="message-box">
+    ChatGPT is always learning new things and getting better every day!  
+    Ask him anything, chat with your friends, or just have fun in your server 🎉
+  </div>
+
+  <button class="add-button" onclick="window.open('https://discord.com/oauth2/authorize?client_id=1433900755831492630', '_blank')">
+    ➕ Add ChatGPT to Discord
+  </button>
+
+  <h2>Limitations</h2>
+  <p>ChatGPT can’t see avatars or access private messages, and his responses are limited to 2000 characters per message — but he’ll automatically split longer ones for you!</p>
+
+  <h2>Fun facts</h2>
+  <p>Did you know ChatGPT’s avatar is inspired by the Discord logo? He’s not just a bot — he’s part of your Discord experience.</p>
+
+  <img src="animated_clyde.gif" alt="ChatGPT Avatar" class="chatgptpfp">
+
+  <h2>FAQ</h2>
+  <p><b>Q:</b> What API does ChatGPT use?<br>
+  <b>A:</b> ChatGPT uses a custom GPT-3.5 model from g4f library.</p>
+
+  <p><b>Q:</b> How do I add ChatGPT to my server?<br>
+  <b>A:</b> Click the “Add ChatGPT to Discord” button above!</p>
+
+  <p><b>Q:</b> Does ChatGPT have rate limits?<br>
+  <b>A:</b> Yes, heavy requests are queued for stability.</p>
+
+  <p><b>Q:</b> Can I DM ChatGPT?<br>
+  <b>A:</b> Of course! Just message him directly and he’ll reply instantly.</p>
+
+  <p><b>Q:</b> Why does ChatGPT sometimes create threads?<br>
+  <b>A:</b> He creates them so your conversations stay organized!</p>
+
+  <h2>Official Website</h2>
+  <p>If you ask ChatGPT to link his website, he’ll send you here!  
+  Made by <b>benjithepro</b> ❤️</p>
+
+  <p>By using ChatGPT, you agree to our <a href="terms.html">Terms of Service</a>.</p>
+
+  <footer>© 2025 ChatGPT AI — Not affiliated with OpenAI or Discord.</footer>
 </body>
 </html>
